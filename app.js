@@ -272,7 +272,7 @@ app.post("/tools-backend/sig/ssl-check-url", (req, res) => {
 		.catch( (err) => res.send(err));
 });
 
-//const port = 3000;
-app.listen(3500, function () {
-	console.log(`Server is running on port`);
+const port = 3000;
+app.listen(port, function () {
+	console.log(`Server is running on port ${port}`);
 });
