@@ -68,27 +68,27 @@ const imageUpload = multer({ storage: storage });
 const upload = multer({ storage: qrCodeStorage });
 const uploadMenuFiles = multer({ storage: menuFileStorage });
 
-app.get("/tools-backend/hello", (req, res) => {
+app.get("/tools-backend/sig/hello", (req, res) => {
 	res.send("Hello world");
 });
 
-app.post("/tools-backend/image-upload", imageUpload.single("my-image-file"), (req, res) => {
+app.post("/tools-backend/sig/image-upload", imageUpload.single("my-image-file"), (req, res) => {
 	res.send(req.file.filename);
 });
 
-app.post("/tools-backend/image", upload.single("my-image-file"), (req, res) => {
+app.post("/tools-backend/sig/image", upload.single("my-image-file"), (req, res) => {
 	res.send(req.file.filename);
 });
 
-app.post("/tools-backend/pdf-upload", upload.single("my-pdf-file"), (req, res) => {
+app.post("/tools-backend/sig/pdf-upload", upload.single("my-pdf-file"), (req, res) => {
 	res.send(req.file.filename);
 });
 
-app.post("/tools-backend/mp3-upload", upload.single("my-mp3-file"), (req, res) => {
+app.post("/tools-backend/sig/mp3-upload", upload.single("my-mp3-file"), (req, res) => {
 	res.send(req.file.filename);
 });
 
-app.post("/tools-backend/menu", uploadMenuFiles.array("items"), (req, res) => {
+app.post("/tools-backend/sig/menu", uploadMenuFiles.array("items"), (req, res) => {
 	const restaurantName = req.body.name;
 	const description = req.body.description;
 
@@ -112,7 +112,7 @@ app.post("/tools-backend/menu", uploadMenuFiles.array("items"), (req, res) => {
 	res.send("Added files");
 });
 
-app.post("/tools-backend/app", upload.single(), (req, res) => {
+app.post("/tools-backend/sig/app", upload.single(), (req, res) => {
 	const androidUrl = req.body.android;
 	const iosUrl = req.body.ios;
 	const otherUrl = req.body.other;
@@ -136,7 +136,7 @@ app.post("/tools-backend/app", upload.single(), (req, res) => {
 	res.send("Added details");
 });
 
-app.post("/tools-backend/fb", upload.single(), (req, res) => {
+app.post("/tools-backend/sig/fb", upload.single(), (req, res) => {
 	const username = req.body.username;
 	const details = {
 		username: username,
@@ -156,7 +156,7 @@ app.post("/tools-backend/fb", upload.single(), (req, res) => {
 	res.send("Added details");
 });
 
-app.post("/tools-backend/coupon", upload.single(), (req, res) => {
+app.post("/tools-backend/sig/coupon", upload.single(), (req, res) => {
 	const company = req.body.company;
 	const discountType = req.body.discountType;
 	const discountCode = req.body.discountCode;
@@ -181,9 +181,9 @@ app.post("/tools-backend/coupon", upload.single(), (req, res) => {
 	res.send("Added details");
 });
 
-app.get("/tools-backend/menu/:menuId", (req, res) => {
+app.get("/tools-backend/sig/menu/:menuId", (req, res) => {
 	const folderName = req.params.menuId;
-	const baseURL = "https://demo.cuberootdigital.in/tools-backend/uploads/QrCode/menu/" + folderName + "/";
+	const baseURL = "https://demo.cuberootdigital.in/tools-backend/sig/uploads/QrCode/menu/" + folderName + "/";
 	const details = JSON.parse(
 		fs.readFileSync(
 			path.join(
@@ -207,7 +207,7 @@ app.get("/tools-backend/menu/:menuId", (req, res) => {
 	});
 });
 
-app.get("/tools-backend/app/:appId", (req, res) => {
+app.get("/tools-backend/sig/app/:appId", (req, res) => {
 	const fileName = req.params.appId;
 	const details = JSON.parse(
 		fs.readFileSync(
@@ -228,7 +228,7 @@ app.get("/tools-backend/app/:appId", (req, res) => {
 	});
 });
 
-app.get("/tools-backend/fb/:id", (req, res) => {
+app.get("/tools-backend/sig/fb/:id", (req, res) => {
 	const fileName = req.params.id;
 	const details = JSON.parse(
 		fs.readFileSync(
@@ -242,7 +242,7 @@ app.get("/tools-backend/fb/:id", (req, res) => {
 	});
 });
 
-app.get("/tools-backend/coupon/:id", (req, res) => {
+app.get("/tools-backend/sig/coupon/:id", (req, res) => {
 	const fileName = req.params.id;
 	const details = JSON.parse(
 		fs.readFileSync(
@@ -264,7 +264,7 @@ app.get("/tools-backend/coupon/:id", (req, res) => {
 });
 
 
-app.post("/tools-backend/ssl-check-url", (req, res) => {
+app.post("/tools-backend/sig/ssl-check-url", (req, res) => {
 	console.log(req.body);
 	const host = req.body.host;
 	sslChecker(host, { method: "GET", port: 443 })
