@@ -1,0 +1,64 @@
+* {
+	font-family: "Poppins";
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.card {
+	background: url("https://d3nvy39jvu7woe.cloudfront.net/static/images/facebook_like/facebook_like_image.png");
+	width: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	color: black;
+    flex-flow: column;
+	width: 500px;
+	/* background-image: url("/bg.jfif"); */
+	padding: 0 2rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card__header {
+    text-align: center;
+    /* background-color: white; */
+}
+
+.card__header h1 {
+	font-size: 4rem;
+}
+
+.card__menu-item h1 {
+	padding: 0;
+	margin: 0;
+}
+
+.card__menu-item {
+	text-align: center;
+    padding-bottom: 200px;
+	padding: 1rem;
+	color: black;
+	margin-top: 30vh;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.card__menu-item:hover {
+	cursor: pointer;
+}
+
+@media (max-width: 500px) {
+	.card {
+		width: 100vw;
+	}
+}

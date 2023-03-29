@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+
+<link rel="stylesheet" href="/css/menu.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <img class="card__logo" src=<%= logoLink %> alt="logo"/>
+
+            <div class="card__header">
+                <h1><%= restaurantName %></h1>
+                <h3><%= description %></h3>
+            </div>
+
+            <div class="card__menu">
+
+                <% if(breakfastLink !== "") { %>
+                <div onclick="window.location.href = '<%= breakfastLink %>';" class="card__menu-item">
+                    <h1>Breakfast</h1>
+                    <span>9:00AM-11:00AM</span>
+                </div>
+                <% } %>
+
+                <div onclick="window.location.href = '<%= lunchLink %>';" class="card__menu-item">
+                    <h1>Lunch</h1>
+                    <span>12:30PM-3:00PM</span>
+                </div>
+
+                <div onclick="window.location.href = '<%= dinnerLink %>';" class="card__menu-item">
+                    <h1>Dinner</h1>
+                    <span>7PM-11PM</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

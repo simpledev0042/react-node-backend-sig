@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+
+<link rel="stylesheet" href="/css/coupon.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card__header">
+                <h1><%= company %></h1>
+                <h3><%= discountType %></h3>
+            </div>
+
+            <div class="card__menu">
+
+                <div class="card__menu-item">
+                    <h1 id="discount"><%= discountCode %></h1>
+                    <button onclick="copyCode()">Copy Code</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+    function copyCode(){
+
+        let text = document.getElementById("discount").innerText;
+        navigator.clipboard.writeText(text);
+        alert("Coupon code copied");
+
+    }
+
+</script>
+
+</html>

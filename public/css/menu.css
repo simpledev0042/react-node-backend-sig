@@ -1,0 +1,63 @@
+* {
+	font-family: "Poppins";
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.card {
+	background: url("https://d3nvy39jvu7woe.cloudfront.net/static/images//restaurantmenu/background_1.png");
+	width: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	color: white;
+	width: 500px;
+	/* background-image: url("/bg.jfif"); */
+	padding: 0 2rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card__logo {
+	width: 50px;
+	height: 50px;
+}
+
+.card__header h1 {
+	font-weight: 900;
+}
+
+.card__menu-item h1 {
+	padding: 0;
+	margin: 0;
+}
+
+.card__menu-item {
+	/* padding: 1rem; */
+	padding: 1rem;
+	/* width: 300px; */
+	color: black;
+	margin: 1rem;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.card__menu-item:hover {
+	cursor: pointer;
+}
+
+@media (max-width: 500px) {
+	.card {
+		width: 100vw;
+	}
+}

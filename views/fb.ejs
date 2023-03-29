@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+
+<link rel="stylesheet" href="/css/fb.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card__header">
+                <h1>Like us on facebook</h1>
+            </div>
+
+            <div class="card__menu">
+
+                <div onclick="window.location.href = '<%= fbLink %>';" class="card__menu-item">
+                    <h3><b>Username: </b>
+                        <%= username %>
+                    </h3>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
